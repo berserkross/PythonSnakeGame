@@ -137,6 +137,11 @@ class SnakeGame:
         Args:
             event: Tkinter key press event
         """
+        # 先处理重开：游戏结束时 game_state 已不是 playing，必须放在提前返回之前。
+        if event.keysym.lower() == 'r' and self.game_state == self.STATE_GAME_OVER:
+            self.restart_game()
+            return
+
         if self.game_state != self.STATE_PLAYING:
             return
 
@@ -149,9 +154,6 @@ class SnakeGame:
             self.next_direction = 'Up'
         elif event.keysym == 'Down' and self.direction != 'Up':
             self.next_direction = 'Down'
-        # Handle restart key
-        elif event.keysym.lower() == 'r' and self.game_state == self.STATE_GAME_OVER:
-            self.restart_game()
 
     def calculate_new_head(self):
         """
