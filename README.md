@@ -5,7 +5,7 @@ A Tkinter Snake game implemented in Python. Submitted as part of
 The Chinese University of Hong Kong, Shenzhen (CUHK-SZ).
 
 Course context: the Python assignment requires preliminary Snake rules,
-Python GUI, and direct keyboard control. [3](@ref)
+Python GUI, and direct keyboard control.
 
 ## Features
 
